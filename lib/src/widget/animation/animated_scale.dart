@@ -20,13 +20,13 @@ import 'package:flutter/widgets.dart';
 ///
 /// This will aimate the child's scale from 1 to 0.5 in 150ms (default duration)
 ///
-class AnimatedScale extends StatefulWidget {
+class CustomAnimatedScale extends StatefulWidget {
   final Widget? child;
   final double scale;
   final Duration duration;
   final Alignment alignment;
 
-  const AnimatedScale({
+  const CustomAnimatedScale({
     this.child,
     this.scale = 1,
     this.duration = const Duration(milliseconds: 150),
@@ -34,10 +34,10 @@ class AnimatedScale extends StatefulWidget {
   });
 
   @override
-  _AnimatedScaleState createState() => _AnimatedScaleState();
+  _CustomAnimatedScaleState createState() => _CustomAnimatedScaleState();
 }
 
-class _AnimatedScaleState extends State<AnimatedScale>
+class _CustomAnimatedScaleState extends State<CustomAnimatedScale>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -52,7 +52,7 @@ class _AnimatedScaleState extends State<AnimatedScale>
   }
 
   @override
-  void didUpdateWidget(AnimatedScale oldWidget) {
+  void didUpdateWidget(CustomAnimatedScale oldWidget) {
     if (oldWidget.scale != widget.scale) {
       _controller.reset();
       oldScale = oldWidget.scale;

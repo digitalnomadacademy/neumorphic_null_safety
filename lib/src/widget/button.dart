@@ -197,7 +197,7 @@ class _NeumorphicButtonState extends State<NeumorphicButton> {
         hasTapUp = true;
         _resetIfTapUp();
       },
-      child: AnimatedScale(
+      child: CustomAnimatedScale(
         scale: _getScale(),
         child: Neumorphic(
           margin: widget.margin ?? const EdgeInsets.all(0),
